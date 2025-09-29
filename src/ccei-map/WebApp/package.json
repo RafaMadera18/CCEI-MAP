@@ -6,11 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "lint": "ng lint",
     "test": "ng test"
   },
   "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
     "overrides": [
       {
         "files": "*.html",
@@ -29,6 +28,7 @@
     "@angular/forms": "^20.3.0",
     "@angular/platform-browser": "^20.3.0",
     "@angular/router": "^20.3.0",
+    "konva": "^10.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
