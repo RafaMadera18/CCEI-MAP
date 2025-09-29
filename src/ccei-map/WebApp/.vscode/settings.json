@@ -1,0 +1,22 @@
+{
+  "editor.rulers": [80, 120],
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "editor.formatOnSave": true,
+  "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    ".vs/": true,
+    ".angular/": true,
+    "node_modules/": true,
+    "dist/": true,
+    ".scannerwork/": true
+  },
+  "sonarlint.connectedMode.project": {
+    "projectKey": "CCEI-Map-WebApp",
+    "connectionId": "http://localhost:9000"
+  },
+  "sonarlint.disableTelemetry": true,
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  }
+}
