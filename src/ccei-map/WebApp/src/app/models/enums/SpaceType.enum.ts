@@ -1,0 +1,5 @@
+export enum SpaceType {
+  CLASSROOM = 'CLASSROOM',
+  LABORATORY = 'LABORATORY',
+  OFFICE = 'OFFICE'
+}

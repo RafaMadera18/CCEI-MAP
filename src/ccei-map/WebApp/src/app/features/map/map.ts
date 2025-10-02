@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-import Konva from "konva";
+import Konva from 'konva';
 
 class Vector2 {
   constructor(
@@ -13,7 +13,7 @@ class Room {
   constructor(readonly name: string) {}
 
   color(): string {
-    return this.name == "WC" ? "#0e71b5" : "#bbdefb";
+    return this.name == 'WC' ? '#0e71b5' : '#bbdefb';
   }
 }
 
@@ -34,10 +34,10 @@ class Building {
 }
 
 @Component({
-  selector: "app-map",
+  selector: 'app-map',
   imports: [],
-  templateUrl: "./map.html",
-  styleUrl: "./map.scss",
+  templateUrl: './map.html',
+  styleUrl: './map.scss',
 })
 export class Map implements OnInit {
   ngOnInit() {
@@ -60,7 +60,7 @@ export class Map implements OnInit {
     for (let x = 0; x <= width; x += spacing) {
       const line = new Konva.Line({
         points: [x, 0, x, height],
-        stroke: "#e0e0e0",
+        stroke: '#e0e0e0',
         strokeWidth: 1,
       });
       gridGroup.add(line);
@@ -71,7 +71,7 @@ export class Map implements OnInit {
         y: 2,
         text: `${x}`,
         fontSize: 10,
-        fill: "gray",
+        fill: 'gray',
       });
       gridGroup.add(label);
     }
@@ -80,7 +80,7 @@ export class Map implements OnInit {
     for (let y = 0; y <= height; y += spacing) {
       const line = new Konva.Line({
         points: [0, y, width, y],
-        stroke: "#e0e0e0",
+        stroke: '#e0e0e0',
         strokeWidth: 1,
       });
       gridGroup.add(line);
@@ -91,7 +91,7 @@ export class Map implements OnInit {
         y: y + 2,
         text: `${y}`,
         fontSize: 10,
-        fill: "gray",
+        fill: 'gray',
       });
       gridGroup.add(label);
     }
@@ -104,7 +104,7 @@ export class Map implements OnInit {
     const height = window.innerHeight;
 
     const stage = new Konva.Stage({
-      container: "container",
+      container: 'container',
       width,
       height,
       draggable: true,
@@ -116,23 +116,23 @@ export class Map implements OnInit {
     Map.drawGrid(layer, width, height, 50);
 
     const buildings = [
-      new Building("C", new Vector2(300, 300), new Vector2(150, 80), [
-        new Floor("PB", [
+      new Building('C', new Vector2(300, 300), new Vector2(150, 80), [
+        new Floor('PB', [
           ...Map.range(1, 5).map((i) => new Room(`C${i}`)),
-          new Room("WC"),
+          new Room('WC'),
         ]),
         new Floor(
-          "PA",
+          'PA',
           Map.range(6, 5).map((i) => new Room(`C${i}`)),
         ),
       ]),
-      new Building("H", new Vector2(500, 200), new Vector2(150, 80), [
-        new Floor("PB", [
-          new Room("WC"),
+      new Building('H', new Vector2(500, 200), new Vector2(150, 80), [
+        new Floor('PB', [
+          new Room('WC'),
           ...Map.range(1, 4).map((i) => new Room(`H${i}`)),
         ]),
         new Floor(
-          "PA",
+          'PA',
           Map.range(5, 4).map((i) => new Room(`H${i}`)),
         ),
       ]),
@@ -140,10 +140,10 @@ export class Map implements OnInit {
 
     const path = new Konva.Line({
       points: [300, 390, 650, 390, /**/ 475, 390, 475, 290, 650, 290],
-      stroke: "#a1887f",
+      stroke: '#a1887f',
       strokeWidth: 20,
-      lineCap: "round",
-      lineJoin: "round",
+      lineCap: 'round',
+      lineJoin: 'round',
     });
     layer.add(path);
 
@@ -161,7 +161,7 @@ export class Map implements OnInit {
           y,
           width: b.size.x,
           height: floorHeight,
-          stroke: "black",
+          stroke: 'black',
           strokeWidth: 1,
         });
         layer.add(floorRect);
@@ -178,26 +178,26 @@ export class Map implements OnInit {
             width: roomWidth,
             height: floorHeight,
             fill: r.color(),
-            stroke: "black",
+            stroke: 'black',
             strokeWidth: 0.5,
             name: r.name,
           });
 
           // Highlight on hover
-          roomRect.on("mouseover", () => {
-            document.body.style.cursor = "pointer";
-            roomRect.fill("#64b5f6");
+          roomRect.on('mouseover', () => {
+            document.body.style.cursor = 'pointer';
+            roomRect.fill('#64b5f6');
             layer.batchDraw();
           });
 
-          roomRect.on("mouseout", () => {
-            document.body.style.cursor = "default";
+          roomRect.on('mouseout', () => {
+            document.body.style.cursor = 'default';
             roomRect.fill(r.color());
             layer.batchDraw();
           });
 
           // Alert on click
-          roomRect.on("click", () => {
+          roomRect.on('click', () => {
             alert(
               `Clicked on room: ${r.name} (Floor ${f.name}, Building ${b.name})`,
             );
@@ -212,10 +212,10 @@ export class Map implements OnInit {
             width: roomWidth,
             height: floorHeight,
             text: r.name,
-            align: "center",
-            verticalAlign: "middle",
+            align: 'center',
+            verticalAlign: 'middle',
             fontSize: 12,
-            fill: "black",
+            fill: 'black',
             listening: false,
           });
           layer.add(label);
@@ -223,7 +223,7 @@ export class Map implements OnInit {
       });
     });
 
-    stage.on("wheel", (e: any) => {
+    stage.on('wheel', (e: any) => {
       e.evt.preventDefault();
 
       const scaleBy = 1.05;

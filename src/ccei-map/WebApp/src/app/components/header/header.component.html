@@ -1,0 +1,66 @@
+<header class="header">
+  <div class="header-container">
+    <div class="header-left">
+      <div class="header-brand">
+        <img src="favicon.ico" alt="UADY Logo" class="header-logo" />
+        <span class="header-title">Campus Map</span>
+      </div>
+
+      <nav class="header-nav" [class.active]="isMobileMenuOpen">
+        <a
+          routerLink="/edificios"
+          routerLinkActive="active"
+          class="header-link"
+          (click)="closeMobileMenu()"
+        >
+          Edificios
+        </a>
+        <a
+          routerLink="/salones"
+          routerLinkActive="active"
+          class="header-link"
+          (click)="closeMobileMenu()"
+        >
+          Salones
+        </a>
+        <a
+          routerLink="/eventos"
+          routerLinkActive="active"
+          class="header-link"
+          (click)="closeMobileMenu()"
+        >
+          Eventos
+        </a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="header-user">
+        <button class="user-button" aria-label="Perfil de usuario">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+      </div>
+      <button
+        class="header-toggle"
+        (click)="toggleMobileMenu()"
+        aria-label="Toggle menu"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
