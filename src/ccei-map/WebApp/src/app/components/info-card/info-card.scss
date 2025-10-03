@@ -1,0 +1,62 @@
+.info-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: white;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  &.gradient-purple {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  &.gradient-blue {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+
+  &.gradient-green {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  }
+
+  &.gradient-orange {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  }
+
+  &.gradient-pink {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .info-card {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}

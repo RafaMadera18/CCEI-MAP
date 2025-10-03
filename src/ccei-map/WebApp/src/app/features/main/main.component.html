@@ -5,78 +5,103 @@
 
   <div class="content-container">
     <section class="map-section">
-      <app-map></app-map>
+      <app-map-d3></app-map-d3>
     </section>
+
     <section class="info-section">
       <div class="welcome-section">
         <h1>Bienvenido al Mapa Interactivo del Campus UADY</h1>
         <p class="intro-text">
           Navega por nuestro campus de forma intuitiva y descubre todos los
-          espacios que conforman la Universidad Autónoma de Yucatán. Este mapa
-          interactivo te ayudará a ubicar edificios, salones y puntos de interés
-          en tiempo real.
+          espacios que conforman la Universidad Autónoma de Yucatán.
         </p>
-      </div>
-      <div class="features-section">
         <h2>¿Cómo usar el mapa?</h2>
-        <div class="feature-item">
-          <h3>🖱️ Navega</h3>
-          <p>
-            Arrastra el mapa para explorar diferentes áreas del campus. Usa la
-            rueda del mouse o gestos de pellizco para acercar o alejar la vista.
-          </p>
-        </div>
-        <div class="feature-item">
-          <h3>🏢 Explora Edificios</h3>
-          <p>
-            Haz clic en cualquier edificio para ver información detallada:
-            nombre, pisos disponibles y salones que contiene.
-          </p>
-        </div>
-        <div class="feature-item">
-          <h3>📍 Encuentra Salones</h3>
-          <p>
-            Selecciona un salón específico para conocer su ubicación exacta,
-            piso y edificio al que pertenece.
-          </p>
-        </div>
-        <div class="feature-item">
-          <h3>🚻 Servicios</h3>
-          <p>
-            Los baños y servicios están identificados con colores especiales
-            para facilitar su localización.
-          </p>
-        </div>
-      </div>
-      <div class="info-cards">
-        <div class="info-card">
-          <h2>Edificios Disponibles</h2>
-          <p>
-            El campus cuenta con múltiples edificios distribuidos
-            estratégicamente. Cada uno alberga diferentes facultades, salones de
-            clase y áreas administrativas.
-          </p>
-        </div>
-        <div class="info-card">
-          <h2>Eventos del Campus</h2>
-          <p>
-            Consulta la sección de eventos para conocer las actividades
-            académicas, culturales y deportivas que se realizan en diferentes
-            espacios del campus.
-          </p>
-        </div>
-      </div>
-      <div class="help-section">
-        <h2>¿Necesitas Ayuda?</h2>
-        <p>
-          Si tienes alguna pregunta, sugerencia o encontraste algún error en el
-          mapa, no dudes en contactarnos. Tu retroalimentación nos ayuda a
-          mejorar continuamente esta herramienta.
-        </p>
-        <p class="contact-info">
-          📧 Contacto: <a href="http/uady.mx">correo.gmail.com</a>
-        </p>
+        <app-feature-card
+          icon="🏢"
+          title="Explora Edificios"
+          description="Haz clic en cualquier edificio para ver información detallada."
+        ></app-feature-card>
+        <app-feature-card
+          icon="📍"
+          title="Encuentra Salones"
+          description="Selecciona un salón específico para conocer su ubicación exacta."
+        ></app-feature-card>
+        <app-feature-card
+          icon="🚻"
+          title="Servicios"
+          description="Los baños y servicios están identificados con colores especiales."
+        ></app-feature-card>
       </div>
     </section>
+    <div class="bottom-section">
+      <h1 class="bottom-title">Información del Campus</h1>
+      <div class="content-item">
+        <app-info-card
+          title="Edificios Disponibles"
+          description="El campus cuenta con múltiples edificios distribuidos estratégicamente. Cada uno alberga diferentes facultades, salones de clase y áreas administrativas."
+          gradient="blue"
+        />
+      </div>
+      <div class="content-item">
+        <app-info-card
+          title="Eventos del Campus"
+          description="Consulta la sección de eventos para conocer actividades académicas, culturales y deportivas que se realizan en diferentes espacios."
+          gradient="blue"
+        />
+      </div>
+      <div class="content-item">
+        <app-info-card
+          title="Bibliotecas"
+          description="Accede a amplias colecciones bibliográficas, espacios de estudio y recursos digitales en nuestras bibliotecas especializadas."
+          gradient="purple"
+        />
+      </div>
+
+      <div class="content-item">
+        <app-info-card
+          title="Laboratorios"
+          description="Instalaciones equipadas con tecnología de punta para prácticas de ingeniería, ciencias y computación."
+          gradient="purple"
+        />
+      </div>
+
+      <div class="content-item">
+        <app-info-card
+          title="Cafeterías"
+          description="Encuentra espacios para alimentarte y descansar entre clases. Ubicaciones distribuidas en todo el campus."
+          gradient="purple"
+        />
+      </div>
+
+      <div class="content-item">
+        <app-info-card
+          title="Áreas Deportivas"
+          description="Canchas, gimnasios y espacios recreativos para mantener un estilo de vida saludable durante tu estancia universitaria."
+          gradient="purple"
+        />
+      </div>
+      <div class="content-item">
+        <app-info-card
+          title="Control Escolar"
+          description="Oficinas administrativas para trámites académicos, inscripciones, certificados y documentación oficial."
+          gradient="purple"
+        />
+      </div>
+
+      <div class="content-item">
+        <app-info-card
+          title="Estacionamientos"
+          description="Zonas designadas para estacionamiento de estudiantes y visitantes distribuidas estratégicamente en el campus."
+          gradient="purple"
+        />
+      </div>
+      <div class="content-item">
+        <app-info-card
+          title="¿Necesitas Ayuda?"
+          description="Si tienes alguna pregunta o encontraste un error en el mapa, contáctanos. Tu retroalimentación nos ayuda a mejorar."
+          gradient="orange"
+        />
+      </div>
+    </div>
   </div>
 </div>
