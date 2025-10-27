@@ -1,1 +1,15 @@
-<p>map-d3 works!</p>
+<div #mapContainer class="map-container"></div>
+<div class="navigation-controls">
+  <button class="control-btn" (click)="resetZoom()" title="Resetear zoom">
+    Resetear Mapa
+  </button>
+  <button class="control-btn" (click)="centerView()" title="Centrar vista">
+    Centrar Mapa
+  </button>
+  <button class="control-btn" (click)="zoomIn()" title="Acercar">
+    Zoom In
+  </button>
+  <button class="control-btn" (click)="zoomOut()" title="Alejar">
+    Zoom Out
+  </button>
+</div>

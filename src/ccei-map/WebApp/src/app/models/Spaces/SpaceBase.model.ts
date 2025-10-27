@@ -1,14 +1,13 @@
-import { Classroom, Laboratory, Office } from "..";
-import { Coordinates } from "../Coordinates.model";
-
+import { Classroom, Laboratory, Office } from '.';
+import { Dimensions, Coordinates } from './spaceAux';
 
 export type Space = Classroom | Office | Laboratory;
 
 export interface SpaceBase {
-  id: string;
+  spaceId: string;
   name: string;
-  buildingId: string; // Reference to the building where it's located
   floor: number;
   coordinates: Coordinates;
-  active: boolean;
+  dimensions: Dimensions;
+  isActive: boolean;
 }
