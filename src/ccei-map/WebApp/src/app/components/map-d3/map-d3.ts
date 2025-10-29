@@ -34,6 +34,7 @@ export class BuildingMapComponent implements OnInit {
       .attr('width', this.width)
       .attr('height', this.height);
     this.addBackgroundImage();
+    this.createGradients();
 
     this.mainGroup = this.svg.append('g');
 
@@ -49,13 +50,9 @@ export class BuildingMapComponent implements OnInit {
     this.centerView();
   }
 
-  /**
-   * 🎨 Agregar imagen de fondo al SVG
-   */
   private addBackgroundImage() {
     const defs = this.svg.append('defs');
 
-    // Crear patrón con la imagen
     const pattern = defs
       .append('pattern')
       .attr('id', 'bgImage')
@@ -65,22 +62,18 @@ export class BuildingMapComponent implements OnInit {
 
     pattern
       .append('image')
-      .attr(
-        'href',
-        'https://img.freepik.com/vector-premium/mapa-mundo-fondo-vintage-colorido_153969-6050.jpg?semt=ais_hybrid&w=740&q=80',
-      )
+      .attr('href', 'assets/fondoMapa.png')
       .attr('width', this.width)
       .attr('height', this.height)
-      .attr('preserveAspectRatio', 'xMidYMid slice'); // Ajusta la imagen
+      .attr('preserveAspectRatio', 'xMidYMid slice');
 
-    // Crear rectángulo con el patrón
     this.svg
       .insert('rect', ':first-child') // Insertar al fondo
       .attr('width', this.width)
       .attr('height', this.height)
       .attr('fill', 'url(#bgImage)')
-      .attr('opacity', 0.2) // 👈 Opacidad para no tapar los espacios
-      .style('pointer-events', 'none'); // No bloquea clicks
+      .attr('opacity', 0.2)
+      .style('pointer-events', 'none');
   }
 
   private renderSpaces() {
@@ -181,13 +174,6 @@ export class BuildingMapComponent implements OnInit {
     this.selectedSpace = null;
   }
 
-  public resetZoom() {
-    this.svg
-      .transition()
-      .duration(750)
-      .call(this.zoom.transform, d3.zoomIdentity);
-  }
-
   public centerView() {
     const bounds = calculateBounds(this.allSpaces);
     const scale =
@@ -212,5 +198,95 @@ export class BuildingMapComponent implements OnInit {
 
   public zoomOut() {
     this.svg.transition().duration(300).call(this.zoom.scaleBy, 0.7);
+  }
+
+  private createGradients() {
+    const defs = this.svg.select('defs').empty()
+      ? this.svg.append('defs')
+      : this.svg.select('defs');
+
+    // Gradiente para CLASSROOM (Verde)
+    const classroomGradient = defs
+      .append('linearGradient')
+      .attr('id', 'gradient-classroom')
+      .attr('x1', '0%')
+      .attr('y1', '0%')
+      .attr('x2', '100%')
+      .attr('y2', '100%');
+
+    classroomGradient
+      .append('stop')
+      .attr('offset', '0%')
+      .attr('stop-color', '#66BB6A')
+      .attr('stop-opacity', 1);
+
+    classroomGradient
+      .append('stop')
+      .attr('offset', '100%')
+      .attr('stop-color', '#2E7D32')
+      .attr('stop-opacity', 1);
+
+    // Gradiente para OFFICE (Azul)
+    const officeGradient = defs
+      .append('linearGradient')
+      .attr('id', 'gradient-office')
+      .attr('x1', '0%')
+      .attr('y1', '0%')
+      .attr('x2', '100%')
+      .attr('y2', '100%');
+
+    officeGradient
+      .append('stop')
+      .attr('offset', '0%')
+      .attr('stop-color', '#42A5F5')
+      .attr('stop-opacity', 1);
+
+    officeGradient
+      .append('stop')
+      .attr('offset', '100%')
+      .attr('stop-color', '#1565C0')
+      .attr('stop-opacity', 1);
+
+    // Gradiente para LABORATORY (Naranja)
+    const laboratoryGradient = defs
+      .append('linearGradient')
+      .attr('id', 'gradient-laboratory')
+      .attr('x1', '0%')
+      .attr('y1', '0%')
+      .attr('x2', '100%')
+      .attr('y2', '100%');
+
+    laboratoryGradient
+      .append('stop')
+      .attr('offset', '0%')
+      .attr('stop-color', '#FFB74D')
+      .attr('stop-opacity', 1);
+
+    laboratoryGradient
+      .append('stop')
+      .attr('offset', '100%')
+      .attr('stop-color', '#E65100')
+      .attr('stop-opacity', 1);
+
+    // Gradiente por defecto (Gris)
+    const defaultGradient = defs
+      .append('linearGradient')
+      .attr('id', 'gradient-default')
+      .attr('x1', '0%')
+      .attr('y1', '0%')
+      .attr('x2', '100%')
+      .attr('y2', '100%');
+
+    defaultGradient
+      .append('stop')
+      .attr('offset', '0%')
+      .attr('stop-color', '#BDBDBD')
+      .attr('stop-opacity', 1);
+
+    defaultGradient
+      .append('stop')
+      .attr('offset', '100%')
+      .attr('stop-color', '#616161')
+      .attr('stop-opacity', 1);
   }
 }

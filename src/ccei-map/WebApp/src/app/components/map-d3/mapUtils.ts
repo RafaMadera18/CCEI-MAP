@@ -19,13 +19,13 @@ export function extractAllSpaces(buildings: Building[]): Space[] {
 export function getSpaceColor(space: Space): string {
   switch (space.type) {
     case SpaceType.CLASSROOM:
-      return '#4CAF50';
+      return 'url(#gradient-classroom)';
     case SpaceType.OFFICE:
-      return '#2196F3';
+      return 'url(#gradient-office)';
     case SpaceType.LABORATORY:
-      return '#FF9800';
+      return 'url(#gradient-laboratory)';
     default:
-      return '#9E9E9E';
+      return 'url(#gradient-default)';
   }
 }
 
