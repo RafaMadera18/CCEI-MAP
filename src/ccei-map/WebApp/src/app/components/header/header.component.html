@@ -1,35 +1,37 @@
 <header class="header">
   <div class="header-container">
     <div class="header-left">
-      <div class="header-brand">
-        <img src="favicon.ico" alt="UADY Logo" class="header-logo" />
-        <span class="header-title">Campus Map</span>
-      </div>
-
+      <a [routerLink]="['/main']">
+        <div class="header-brand">
+          <img
+            src="../../../assets/LogoApp.png"
+            alt="UADY Logo"
+            class="header-logo"
+          />
+          <span class="header-title">Campus Map</span>
+        </div>
+      </a>
       <nav class="header-nav" [class.active]="isMobileMenuOpen">
         <a
-          routerLink="/edificios"
+          [routerLink]="['/buldings']"
           routerLinkActive="active"
           class="header-link"
-          (click)="closeMobileMenu()"
         >
-          Edificios
+          Edificios y Salones
         </a>
         <a
-          routerLink="/salones"
+          [routerLink]="['/main']"
           routerLinkActive="active"
           class="header-link"
-          (click)="closeMobileMenu()"
-        >
-          Salones
-        </a>
-        <a
-          routerLink="/eventos"
-          routerLinkActive="active"
-          class="header-link"
-          (click)="closeMobileMenu()"
         >
           Eventos
+        </a>
+        <a
+          [routerLink]="['/main']"
+          routerLinkActive="active"
+          class="header-link"
+        >
+          Ayuda
         </a>
       </nav>
     </div>
