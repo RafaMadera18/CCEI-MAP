@@ -10,4 +10,5 @@ export interface SpaceBase {
   coordinates: Coordinates;
   dimensions: Dimensions;
   isActive: boolean;
+  imgUrl?: string;
 }

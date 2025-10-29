@@ -17,6 +17,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.LABORATORY,
         laboratoryName: 'Laboratorio 1',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'L-2',
@@ -27,6 +29,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.LABORATORY,
         laboratoryName: 'Laboratorio 2',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
     ],
   },
@@ -45,6 +49,9 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'C1',
+
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'C2',
@@ -55,6 +62,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'C2',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'C3',
@@ -65,6 +74,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'C3',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'C4',
@@ -75,6 +86,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'C4',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'C5',
@@ -85,6 +98,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'C5',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'C6',
@@ -95,6 +110,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'C6',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'C7',
@@ -105,6 +122,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'C7',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'C8',
@@ -115,6 +134,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'C8',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'C9',
@@ -125,6 +146,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'C9',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'C10',
@@ -135,6 +158,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'C10',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
     ],
   },
@@ -153,6 +178,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'D1',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'D2',
@@ -163,6 +190,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'D2',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'D3',
@@ -173,6 +202,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'D3',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'D4',
@@ -183,6 +214,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'D4',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'D5',
@@ -193,6 +226,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'D5',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'D6',
@@ -203,6 +238,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'D6',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'D7',
@@ -213,6 +250,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'D7',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'D8',
@@ -223,6 +262,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'D8',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'D9',
@@ -233,6 +274,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'D9',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'D10',
@@ -243,6 +286,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'D10',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
     ],
   },
@@ -261,6 +306,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'H1',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'H2',
@@ -271,6 +318,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'H2',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'H3',
@@ -281,6 +330,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'H3',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'H4',
@@ -291,6 +342,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'H4',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'H5',
@@ -301,6 +354,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'H5',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'H6',
@@ -311,6 +366,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'H6',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'H7',
@@ -321,6 +378,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'H7',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'H8',
@@ -331,6 +390,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'H8',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'H9',
@@ -341,6 +402,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'H9',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'H10',
@@ -351,6 +414,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.CLASSROOM,
         nameClassroom: 'H10',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
     ],
   },
@@ -369,6 +434,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M1',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M2',
@@ -379,6 +446,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M2',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M3',
@@ -389,6 +458,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M3',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M4',
@@ -399,6 +470,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M4',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M5',
@@ -409,6 +482,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M5',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M6',
@@ -419,6 +494,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M6',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M7',
@@ -429,6 +506,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M7',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M8',
@@ -439,6 +518,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M8',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M9',
@@ -449,6 +530,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M9',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M10',
@@ -459,6 +542,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M10',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M11',
@@ -469,6 +554,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M11',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M12',
@@ -479,6 +566,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M12',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M13',
@@ -489,6 +578,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M13',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
       {
         spaceId: 'M14',
@@ -499,6 +590,8 @@ export const dataMock: Building[] = [
         isActive: true,
         type: SpaceType.OFFICE,
         codeOfice: 'M14',
+        imgUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
       },
     ],
   },
