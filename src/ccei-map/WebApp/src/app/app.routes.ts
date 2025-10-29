@@ -11,6 +11,18 @@ export const routes: Routes = [
       import('./features/main/main.component').then((m) => m.MainComponent),
   },
   {
+    path: 'buldings',
+    loadComponent: () =>
+      import('./features/buldings/buldings').then((m) => m.Buldings),
+  },
+  {
+    path: 'buldings/:id',
+    loadComponent: () =>
+      import('./features/spaces-buildings/spaces-buildings').then(
+        (m) => m.SpacesBuildings,
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'main',
   },
