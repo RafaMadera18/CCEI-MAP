@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { BuldingsList } from 'app/components/buldings/buldings-list/buldings-list';
 import { HeaderComponent } from 'app/components/header/header.component';
+import { BuldingsList } from '../components/buldings-list/buldings-list';
 
 @Component({
   selector: 'app-buldings',

@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Space } from 'app/models/Spaces';
-import { SpacesList } from 'app/components/buldings/spaces-list/spaces-list';
-import { SpaceInfo } from 'app/components/buldings/space-info/space-info';
 import { HeaderComponent } from 'app/components/header/header.component';
+import { SpaceInfo, SpacesList } from '../components';
 
 @Component({
   selector: 'app-spaces-buildings',
