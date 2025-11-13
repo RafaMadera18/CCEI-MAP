@@ -1,5 +1,5 @@
-import { SpaceType } from 'app/models/enums';
-import { Building } from 'app/models/Spaces';
+import { SpaceType } from 'app/domain/enums';
+import { Building } from 'app/domain/Spaces';
 
 export const dataMock: Building[] = [
   {

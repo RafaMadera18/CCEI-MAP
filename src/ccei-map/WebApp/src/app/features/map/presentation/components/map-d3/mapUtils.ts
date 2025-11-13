@@ -1,5 +1,5 @@
-import { SpaceType } from 'app/models/enums';
-import { Building, Space } from 'app/models/Spaces';
+import { SpaceType } from 'app/domain/enums';
+import { Building, Space } from 'app/domain/Spaces';
 
 export function extractAllSpaces(buildings: Building[]): Space[] {
   const allSpaces: Space[] = [];

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { dataMock } from 'app/data/data-mock';
-import { Building } from 'app/models/Spaces';
+import { Building } from 'app/domain/Spaces';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,5 +10,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './buldings-list.scss',
 })
 export class BuldingsList {
+  constructor() {}
   buildings: Building[] = dataMock;
 }

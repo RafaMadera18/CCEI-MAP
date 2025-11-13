@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Space } from 'app/models/Spaces';
+import { Space } from 'app/domain/Spaces';
 import { HeaderComponent } from 'app/components/header/header.component';
 import { SpaceInfo, SpacesList } from '../components';
 

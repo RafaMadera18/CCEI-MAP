@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { dataMock } from 'app/data/data-mock';
 import { extractAllSpaces, getSpaceColor, calculateBounds } from './mapUtils';
-import { Space } from 'app/models/Spaces';
+import { Space } from 'app/domain/Spaces';
 import * as d3 from 'd3';
 
 @Component({
