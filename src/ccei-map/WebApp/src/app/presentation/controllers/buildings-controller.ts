@@ -1,12 +1,15 @@
-import { Building } from "@domain/entities";
-import { GetAllBuildingsUseCase } from "@use-cases/get-all-buildings";
-import { GetBuildingByIdUseCase } from "@use-cases/get-building-by-id";
+import { Injectable, inject } from '@angular/core';
+import { Building} from "@domain/entities";
+import {
+  GET_ALL_BUILDINGS_USE_CASE,
+  GET_BUILDING_BY_ID_USE_CASE,
+} from "@di/dependencies-provider";
 
+@Injectable()
 export class BuildingsController {
-  constructor(
-    private readonly getAllBuildingsUseCase: GetAllBuildingsUseCase,
-    private readonly getBuildingByIdUseCase: GetBuildingByIdUseCase
-  ) {}
+  private readonly getAllBuildingsUseCase = inject(GET_ALL_BUILDINGS_USE_CASE);
+  private readonly getBuildingByIdUseCase = inject(GET_BUILDING_BY_ID_USE_CASE);
+
 
   getAllBuildings(): Building[] {
     return this.getAllBuildingsUseCase.execute();
@@ -15,4 +18,6 @@ export class BuildingsController {
   getBuildingById(id: string): Building | null {
     return this.getBuildingByIdUseCase.execute(id);
   }
+
+
 }

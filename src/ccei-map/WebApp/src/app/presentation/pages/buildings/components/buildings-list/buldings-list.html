@@ -1,17 +1,38 @@
 <ul>
   @for (building of buildings(); track building.id) {
-    <li [routerLink]="['/buldings', building.id]" style="cursor: pointer">
-      <h3>{{ building.name }}</h3>
-      <div class="content-list">
-        <p>Número de pisos {{ building.numFloors }}</p>
-        <p>
-          Estado:
-          @if (building.isActive) {
-            <span class="status-active">Activo</span>
-          } @else {
-            <span class="status-inactive">Inactivo</span>
+    <li>
+      <div [routerLink]="['/buildings', building.id]">
+        <h3>{{ building.name }}</h3>
+        <div class="content-list">
+          <p>Número de pisos: {{ building.numFloors }}</p>
+          <p>
+            Estado:
+            @if (building.isActive) {
+              <span class="status-active">Activo</span>
+            } @else {
+              <span class="status-inactive">Inactivo</span>
+            }
+          </p>
+        </div>
+      </div>
+
+      <!-- Sección de espacios -->
+      <div class="spaces-section">
+        <h4>Espacios ({{ building.getSpaces().length }})</h4>
+        <ul class="spaces-list">
+          @for (space of building.getSpaces(); track $index) {
+            <li class="space-item">
+              <span class="space-name">{{ space.name }}</span>
+              <div class="space-info">
+                <span class="space-type">{{ getSpaceType(space) }}</span>
+                <span class="space-floor">Piso {{ space.floor }}</span>
+              </div>
+            </li>
           }
-        </p>
+          @empty {
+            <li class="no-spaces">Sin espacios</li>
+          }
+        </ul>
       </div>
     </li>
   }
