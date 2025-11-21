@@ -10,6 +10,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './buldings-list.scss',
 })
 export class BuldingsList {
-  constructor() {}
   buildings: Building[] = dataMock;
 }
