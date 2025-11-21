@@ -4,4 +4,9 @@ html {
   padding: 0;
   overflow: hidden;
   font-family: "Public Sans", "Noto Sans", sans-serif;
+  background: linear-gradient(
+    204deg,
+    rgb(57, 139, 220) 0%,
+    rgba(32, 78, 130, 1) 90%
+  );
 }

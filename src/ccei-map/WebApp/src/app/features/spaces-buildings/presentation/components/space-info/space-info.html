@@ -1,0 +1,7 @@
+<div class="space-detail">
+  <img [src]="space?.imgUrl" alt="{{ space?.name }}" />
+  <h1>{{ space?.name }}</h1>
+  <p>Tipo: {{ space?.type }}</p>
+  <p>Estado: {{ space?.isActive ? "Activo" : "Inactivo" }}</p>
+  <p>{{ space?.floor }}</p>
+</div>
