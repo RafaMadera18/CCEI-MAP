@@ -4,21 +4,14 @@ export const routes: Routes = [
   {
     path: 'main',
     loadComponent: () =>
-      import('./features/main/main.component').then((m) => m.MainComponent),
+      import('@pages/main/main').then((m) => m.Main),
   },
   {
     path: 'buldings',
     loadComponent: () =>
-      import('./features/buildings/presentation/page/buldings').then(
+      import('./presentation/pages/buildings/buldings').then(
         (m) => m.Buldings,
       ),
-  },
-  {
-    path: 'buldings/:id',
-    loadComponent: () =>
-      import(
-        './features/spaces-buildings/presentation/page/spaces-buildings'
-      ).then((m) => m.SpacesBuildings),
   },
   {
     path: '**',

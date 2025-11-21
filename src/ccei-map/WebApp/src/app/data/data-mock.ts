@@ -1,598 +1,74 @@
-import { SpaceType } from 'app/domain/enums';
-import { Building } from 'app/domain/Spaces';
+import { Building } from "@domain/entities/building";
+import { Classroom } from "@domain/entities/classroom";
+import { Laboratory } from "@domain/entities/laboratory";
+import { Office } from "@domain/entities/office";
 
 export const dataMock: Building[] = [
-  {
-    id: 'B1',
-    name: 'Edificio L - Laboratorios',
-    numFloors: 1,
-    isActive: true,
-    buildingSpaces: [
-      {
-        spaceId: 'L-1',
-        name: 'LAB 1',
-        floor: 1,
-        coordinates: { latitude: 100, longitude: 100 },
-        dimensions: { width: 100, height: 150 },
-        isActive: true,
-        type: SpaceType.LABORATORY,
-        laboratoryName: 'Laboratorio 1',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'L-2',
-        name: 'LAB 2',
-        floor: 1,
-        coordinates: { latitude: 100, longitude: 280 },
-        dimensions: { width: 100, height: 150 },
-        isActive: true,
-        type: SpaceType.LABORATORY,
-        laboratoryName: 'Laboratorio 2',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-    ],
-  },
-  {
-    id: 'B2',
-    name: 'Edificio C - Aulas',
-    numFloors: 2,
-    isActive: true,
-    buildingSpaces: [
-      {
-        spaceId: 'C1',
-        name: 'Aula C1',
-        floor: 1,
-        coordinates: { latitude: 350, longitude: 400 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'C1',
+  new Building(
+    "A",
+    "Edificio A",
+    1,
+    [
+      new Classroom(
+        "A-101",
+        "Aula A1",
+        0,
+        { latitude: 50, longitude: 20 },
+        { width: 55, height: 65 },
+        true,
+        "A1"
+      ),
 
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'C2',
-        name: 'Aula C2',
-        floor: 1,
-        coordinates: { latitude: 420, longitude: 400 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'C2',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'C3',
-        name: 'Aula C3',
-        floor: 1,
-        coordinates: { latitude: 490, longitude: 400 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'C3',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'C4',
-        name: 'Aula C4',
-        floor: 1,
-        coordinates: { latitude: 560, longitude: 400 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'C4',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'C5',
-        name: 'Aula C5',
-        floor: 1,
-        coordinates: { latitude: 630, longitude: 400 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'C5',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'C6',
-        name: 'Aula C6',
-        floor: 2,
-        coordinates: { latitude: 350, longitude: 330 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'C6',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'C7',
-        name: 'Aula C7',
-        floor: 2,
-        coordinates: { latitude: 420, longitude: 330 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'C7',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'C8',
-        name: 'Aula C8',
-        floor: 2,
-        coordinates: { latitude: 490, longitude: 330 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'C8',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'C9',
-        name: 'Aula C9',
-        floor: 2,
-        coordinates: { latitude: 560, longitude: 330 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'C9',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'C10',
-        name: 'Aula C10',
-        floor: 2,
-        coordinates: { latitude: 630, longitude: 330 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'C10',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
+      new Classroom(
+        "A-102",
+        "Aula A2",
+        0,
+        { latitude: 120, longitude: 20 },
+        { width: 55, height: 65 },
+        true,
+        "A2"
+      ),
+
+      new Office(
+        "A-103",
+        "Oficina A3",
+        0,
+        { latitude: 50, longitude: 100 },
+        { width: 55, height: 65 },
+        true,
+        "OF-A3"
+      ),
+
+      new Office(
+        "A-104",
+        "Oficina A4",
+        0,
+        { latitude: 120, longitude: 100 },
+        { width: 55, height: 65 },
+        true,
+        "OF-A4"
+      ),
+
+      new Laboratory(
+        "A-LAB-1",
+        "Laboratorio de Redes",
+        0,
+        { latitude: 200, longitude: 160 },
+        { width: 120, height: 130 },
+        true,
+        "Lab Redes"
+      ),
+
+      new Office(
+        "A-ADM",
+        "Administración",
+        0,
+        { latitude: 200, longitude: 20 },
+        { width: 120, height: 130 },
+        true,
+        "OF-ADM"
+      )
     ],
-  },
-  {
-    id: 'B3',
-    name: 'Edificio D - Aulas',
-    numFloors: 2,
-    isActive: true,
-    buildingSpaces: [
-      {
-        spaceId: 'D1',
-        name: 'Aula D1',
-        floor: 1,
-        coordinates: { latitude: 750, longitude: 400 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'D1',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'D2',
-        name: 'Aula D2',
-        floor: 1,
-        coordinates: { latitude: 820, longitude: 400 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'D2',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'D3',
-        name: 'Aula D3',
-        floor: 1,
-        coordinates: { latitude: 890, longitude: 400 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'D3',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'D4',
-        name: 'Aula D4',
-        floor: 1,
-        coordinates: { latitude: 960, longitude: 400 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'D4',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'D5',
-        name: 'Aula D5',
-        floor: 1,
-        coordinates: { latitude: 1030, longitude: 400 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'D5',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'D6',
-        name: 'Aula D6',
-        floor: 2,
-        coordinates: { latitude: 750, longitude: 330 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'D6',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'D7',
-        name: 'Aula D7',
-        floor: 2,
-        coordinates: { latitude: 820, longitude: 330 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'D7',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'D8',
-        name: 'Aula D8',
-        floor: 2,
-        coordinates: { latitude: 890, longitude: 330 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'D8',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'D9',
-        name: 'Aula D9',
-        floor: 2,
-        coordinates: { latitude: 960, longitude: 330 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'D9',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'D10',
-        name: 'Aula D10',
-        floor: 2,
-        coordinates: { latitude: 1030, longitude: 330 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'D10',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-    ],
-  },
-  {
-    id: 'B4',
-    name: 'Edificio H - Aulas',
-    numFloors: 2,
-    isActive: true,
-    buildingSpaces: [
-      {
-        spaceId: 'H1',
-        name: 'Aula H1',
-        floor: 1,
-        coordinates: { latitude: 750, longitude: 200 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'H1',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'H2',
-        name: 'Aula H2',
-        floor: 1,
-        coordinates: { latitude: 820, longitude: 200 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'H2',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'H3',
-        name: 'Aula H3',
-        floor: 1,
-        coordinates: { latitude: 890, longitude: 200 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'H3',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'H4',
-        name: 'Aula H4',
-        floor: 1,
-        coordinates: { latitude: 960, longitude: 200 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'H4',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'H5',
-        name: 'Aula H5',
-        floor: 1,
-        coordinates: { latitude: 1030, longitude: 200 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'H5',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'H6',
-        name: 'Aula H6',
-        floor: 2,
-        coordinates: { latitude: 750, longitude: 130 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'H6',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'H7',
-        name: 'Aula H7',
-        floor: 2,
-        coordinates: { latitude: 820, longitude: 130 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'H7',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'H8',
-        name: 'Aula H8',
-        floor: 2,
-        coordinates: { latitude: 890, longitude: 130 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'H8',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'H9',
-        name: 'Aula H9',
-        floor: 2,
-        coordinates: { latitude: 960, longitude: 130 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'H9',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'H10',
-        name: 'Aula H10',
-        floor: 2,
-        coordinates: { latitude: 1030, longitude: 130 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.CLASSROOM,
-        nameClassroom: 'H10',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-    ],
-  },
-  {
-    id: 'B5',
-    name: 'Edificio M - Cubículos',
-    numFloors: 1,
-    isActive: true,
-    buildingSpaces: [
-      {
-        spaceId: 'M1',
-        name: 'Cubículo M1',
-        floor: 1,
-        coordinates: { latitude: 200, longitude: 650 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M1',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M2',
-        name: 'Cubículo M2',
-        floor: 1,
-        coordinates: { latitude: 270, longitude: 650 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M2',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M3',
-        name: 'Cubículo M3',
-        floor: 1,
-        coordinates: { latitude: 340, longitude: 650 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M3',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M4',
-        name: 'Cubículo M4',
-        floor: 1,
-        coordinates: { latitude: 410, longitude: 650 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M4',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M5',
-        name: 'Cubículo M5',
-        floor: 1,
-        coordinates: { latitude: 480, longitude: 650 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M5',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M6',
-        name: 'Cubículo M6',
-        floor: 1,
-        coordinates: { latitude: 200, longitude: 720 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M6',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M7',
-        name: 'Cubículo M7',
-        floor: 1,
-        coordinates: { latitude: 480, longitude: 720 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M7',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M8',
-        name: 'Cubículo M8',
-        floor: 1,
-        coordinates: { latitude: 200, longitude: 790 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M8',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M9',
-        name: 'Cubículo M9',
-        floor: 1,
-        coordinates: { latitude: 480, longitude: 790 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M9',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M10',
-        name: 'Cubículo M10',
-        floor: 1,
-        coordinates: { latitude: 200, longitude: 860 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M10',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M11',
-        name: 'Cubículo M11',
-        floor: 1,
-        coordinates: { latitude: 270, longitude: 860 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M11',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M12',
-        name: 'Cubículo M12',
-        floor: 1,
-        coordinates: { latitude: 340, longitude: 860 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M12',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M13',
-        name: 'Cubículo M13',
-        floor: 1,
-        coordinates: { latitude: 410, longitude: 860 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M13',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-      {
-        spaceId: 'M14',
-        name: 'Cubículo M14',
-        floor: 1,
-        coordinates: { latitude: 480, longitude: 860 },
-        dimensions: { width: 60, height: 60 },
-        isActive: true,
-        type: SpaceType.OFFICE,
-        codeOfice: 'M14',
-        imgUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/e/e9/Facultad_de_Matem%C3%A1ticas_UADY.jpg',
-      },
-    ],
-  },
+    true
+  )
 ];

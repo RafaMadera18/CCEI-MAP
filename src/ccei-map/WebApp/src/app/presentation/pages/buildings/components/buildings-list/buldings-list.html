@@ -1,0 +1,18 @@
+<ul>
+  @for (building of buildings(); track building.id) {
+    <li [routerLink]="['/buldings', building.id]" style="cursor: pointer">
+      <h3>{{ building.name }}</h3>
+      <div class="content-list">
+        <p>Número de pisos {{ building.numFloors }}</p>
+        <p>
+          Estado:
+          @if (building.isActive) {
+            <span class="status-active">Activo</span>
+          } @else {
+            <span class="status-inactive">Inactivo</span>
+          }
+        </p>
+      </div>
+    </li>
+  }
+</ul>
