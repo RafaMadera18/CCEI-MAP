@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { dataMock } from 'app/data/data-mock';
-import { Building } from 'app/domain/Spaces';
+import { Building } from 'app/core/Spaces';
 import { RouterLink } from '@angular/router';
 
 @Component({
