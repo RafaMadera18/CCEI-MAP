@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Building, Space } from 'app/domain/Spaces';
+import { Building, Space } from 'app/core/Spaces';
 import { dataMock } from 'app/data/data-mock';
 import { CommonModule } from '@angular/common';
 

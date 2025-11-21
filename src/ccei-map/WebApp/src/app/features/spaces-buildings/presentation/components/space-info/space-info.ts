@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Space } from 'app/domain/Spaces';
+import { Space } from 'app/core/Spaces';
 import { CommonModule } from '@angular/common';
 
 @Component({
