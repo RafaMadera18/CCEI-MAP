@@ -1,7 +1,10 @@
 .content {
-  margin: 32px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
   text-align: center;
-  min-height: 100vh;
 }
 
 h1 {
