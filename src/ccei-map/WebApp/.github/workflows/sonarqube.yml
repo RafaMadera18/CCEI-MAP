@@ -27,7 +27,7 @@ jobs:
           cache: 'npm'
           
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
         working-directory: src/ccei-map/WebApp
 
       # 4. Configurar y Ejecutar el SonarQube Scanner
