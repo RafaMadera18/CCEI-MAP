@@ -17,7 +17,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          # Necesario para el análisis de 'blame' de SonarQube
           fetch-depth: 0 
 
       - name: Set up Node.js 22
@@ -30,7 +29,10 @@ jobs:
         run: npm install
         working-directory: src/ccei-map/WebApp
 
-      # 4. Configurar y Ejecutar el SonarQube Scanner
+      - name: Run Tests with Coverage
+        run: npm run test -- --no-watch --code-coverage --browsers=ChromeHeadless
+        working-directory: src/ccei-map/WebApp
+
       - name: SonarQube Scan and Check Quality Gate
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216 # v2.2.0
         env:
@@ -39,8 +41,9 @@ jobs:
         with:
           projectBaseDir: src/ccei-map/WebApp
           args: >
-            -Dsonar.projectKey=mi-proyecto-typescript 
-            -Dsonar.sources=src 
-            -Dsonar.tests=test 
-            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info 
+            -Dsonar.projectKey=CCEI-MAP
+            -Dsonar.sources=src
+            -Dsonar.tests=src
+            -Dsonar.test.inclusions=**/*.spec.ts,**/*.test.ts 
+            -Dsonar.typescript.lcov.reportPaths=coverage/**/lcov.info 
             -Dsonar.qualitygate.wait=true
