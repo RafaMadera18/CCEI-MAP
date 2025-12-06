@@ -1,0 +1,46 @@
+name: SonarQube Scan
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  sonar_scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 2. Checkout del Código
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          # Necesario para el análisis de 'blame' de SonarQube
+          fetch-depth: 0 
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: 'npm'
+          
+      - name: Install Dependencies
+        run: npm install
+        working-directory: src/ccei-map/WebApp
+
+      # 4. Configurar y Ejecutar el SonarQube Scanner
+      - name: SonarQube Scan and Check Quality Gate
+        uses: SonarSource/sonarcloud-github-action@v2.2.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          projectBaseDir: src/ccei-map/WebApp
+          args: >
+            -Dsonar.projectKey=mi-proyecto-typescript 
+            -Dsonar.sources=src 
+            -Dsonar.tests=test 
+            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info 
+            -Dsonar.qualitygate.wait=true
