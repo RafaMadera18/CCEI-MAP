@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: '22.x'
           cache: 'npm'
+          cache-dependency-path: src/ccei-map/WebApp/package-lock.json
           
       - name: Install Dependencies
         run: npm ci
