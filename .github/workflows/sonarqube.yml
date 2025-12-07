@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 2. Checkout del Código
+      # Checkout del Código
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
