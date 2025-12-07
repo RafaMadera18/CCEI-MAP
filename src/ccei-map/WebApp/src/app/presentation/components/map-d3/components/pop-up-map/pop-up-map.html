@@ -1,0 +1,97 @@
+@if (isVisible) {
+  <div class="popup-overlay">
+    <div class="popup-container">
+      <!-- HEADER -->
+      <div class="popup-header">
+        <h3>Espacios Seleccionados ({{ selectedSpaces.length }})</h3>
+      </div>
+
+      <!-- CONTENIDO SEGÚN CANTIDAD DE ESPACIOS -->
+      @if (selectedSpaces.length === 1) {
+        <!-- UN ESPACIO -->
+        <div class="popup-content-single">
+          <div class="space-image">
+            @if (selectedSpaces[0].imgUrl) {
+              <img
+                [src]="selectedSpaces[0].imgUrl"
+                [alt]="selectedSpaces[0].name"
+              />
+            } @else {
+              <div class="no-image">📍</div>
+            }
+          </div>
+          <h4 class="space-name">
+            {{ selectedSpaces[0].name || "Sin nombre" }}
+          </h4>
+          <p class="space-type">
+            {{ selectedSpaces[0].getSpaceType() || "Tipo no especificado" }}
+          </p>
+          <p class="space-id">ID: {{ selectedSpaces[0].spaceId }}</p>
+        </div>
+
+        <div class="popup-footer">
+          <button class="control-btn">Ir a espacio</button>
+        </div>
+      } @else if (selectedSpaces.length === 2) {
+        <div class="popup-content-two">
+          <div class="space-col">
+            <div class="space-image-small">
+              @if (selectedSpaces[0].imgUrl) {
+                <img
+                  [src]="selectedSpaces[0].imgUrl"
+                  [alt]="selectedSpaces[0].name"
+                />
+              } @else {
+                <div class="no-image">📍</div>
+              }
+            </div>
+            <h5>{{ selectedSpaces[0].name || "Sin nombre" }}</h5>
+            <p class="tipo">{{ selectedSpaces[0].getSpaceType() || "N/A" }}</p>
+            <p class="id">ID: {{ selectedSpaces[0].spaceId }}</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="space-col">
+            <div class="space-image-small">
+              @if (selectedSpaces[1].imgUrl) {
+                <img
+                  [src]="selectedSpaces[1].imgUrl"
+                  [alt]="selectedSpaces[1].name"
+                />
+              } @else {
+                <div class="no-image">📍</div>
+              }
+            </div>
+            <h5>{{ selectedSpaces[1].name || "Sin nombre" }}</h5>
+            <p class="tipo">{{ selectedSpaces[1].getSpaceType() || "N/A" }}</p>
+            <p class="id">ID: {{ selectedSpaces[1].spaceId }}</p>
+          </div>
+        </div>
+
+        <div class="popup-footer">
+          <button class="control-btn">Calcular ruta más rápida</button>
+        </div>
+      } @else {
+        <div class="popup-content-multiple">
+          <ul>
+            @for (space of selectedSpaces; track space.spaceId) {
+              <li>
+                <div class="space-image-tiny">
+                  @if (space.imgUrl) {
+                    <img [src]="space.imgUrl" [alt]="space.name" />
+                  } @else {
+                    <div class="no-image">📍</div>
+                  }
+                </div>
+                <div class="space-info">
+                  <h4>{{ space.name || "Sin nombre" }}</h4>
+                  <p class="tipo">{{ space.getSpaceType() || "N/A" }}</p>
+                  <p class="id">ID: {{ space.spaceId }}</p>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+}
