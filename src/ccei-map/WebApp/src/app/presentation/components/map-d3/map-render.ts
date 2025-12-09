@@ -144,7 +144,7 @@ export class MapRenderer {
     }
   }
 
-  private centerView(spaces: Space[]) {
+  public centerView(spaces: Space[]) {
     const bounds = calculateBounds(spaces);
     const scale =
       Math.min(this.width / bounds.width, this.height / bounds.height) * 0.9;

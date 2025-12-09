@@ -50,8 +50,7 @@ export class BuildingMapComponent implements OnInit, OnDestroy {
 
   centerView() {
     const spaces = this.controller.getAllSpaces();
-    const streets = createStreetsMock();
-    this.mapRenderer.render(spaces, streets);
+    this.mapRenderer.centerView(spaces);
   }
 
   zoomIn() {
