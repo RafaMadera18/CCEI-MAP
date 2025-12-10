@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: 'main',
     loadComponent: () =>
-      import('@pages/main/main').then((m) => m.Main),
+      import('./presentation/pages/main/main').then((m) => m.Main),
   },
   {
     path: 'buldings',
@@ -12,6 +12,11 @@ export const routes: Routes = [
       import('./presentation/pages/buildings/buldings').then(
         (m) => m.Buldings,
       ),
+  },
+  {
+    path: 'help',
+    loadComponent: () =>
+      import('./presentation/pages/help/help').then((m) => m.HelpPage),
   },
   {
     path: '**',

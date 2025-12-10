@@ -173,11 +173,12 @@ header {
   }
 }
 
-// Guide Section
+// Guide Section - ¿Cómo usar el mapa?
 .guide-section {
   width: 100%;
   max-width: 1200px;
   padding: 0 2rem;
+  margin: 4%;
 
   .features-grid {
     display: grid;
@@ -186,12 +187,77 @@ header {
   }
 }
 
+// Main Features Section - Funcionalidades Principales
+.features-section {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 2rem;
+  margin: 4% auto;
+
+  .main-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .main-feature-item {
+    display: flex;
+    gap: 1.5rem;
+    background: var(--glass-white);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1.5px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      transform: translateX(8px);
+      box-shadow: var(--shadow-md), 0 0 20px rgba(37, 99, 235, 0.15);
+    }
+
+    .feature-number {
+      flex-shrink: 0;
+      width: 3rem;
+      height: 3rem;
+      background: linear-gradient(135deg, var(--primary-blue), var(--medium-blue));
+      color: #ffffff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .feature-content {
+      flex: 1;
+
+      h3 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--academic-blue);
+        margin: 0 0 0.5rem 0;
+      }
+
+      p {
+        color: var(--blue-grey-600);
+        line-height: 1.6;
+        margin: 0;
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
 // Services Section
 .services-section {
   width: 100%;
   max-width: 1400px;
   padding: 0 2rem;
-
+  margin: 4%;
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -199,11 +265,12 @@ header {
   }
 }
 
-// Help Section - Blue glassmorphism card
+// Contact Section - Blue glassmorphism card
 .help-section {
   width: 100%;
   max-width: 800px;
   padding: 0 2rem;
+  margin: 4% auto;
 
   .help-card {
     /* Glassmorphism with blue gradient overlay */
@@ -245,13 +312,49 @@ header {
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
 
-    p {
+    .contact-intro {
       font-size: 1.1rem;
       line-height: 1.7;
       margin-bottom: 2rem;
       color: rgba(255, 255, 255, 0.95);
       position: relative;
       z-index: 1;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: left;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+
+      .info-icon {
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      strong {
+        display: block;
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+        color: #ffffff;
+      }
+
+      p {
+        margin: 0;
+        opacity: 0.95;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+      }
     }
 
     .contact-btn {
@@ -312,6 +415,17 @@ header {
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .features-section .main-feature-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
   }
 
   .help-section .help-card {

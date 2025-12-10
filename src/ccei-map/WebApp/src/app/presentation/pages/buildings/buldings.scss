@@ -5,9 +5,14 @@
   overflow: hidden;
   overflow-y: scroll;
   text-align: center;
+  padding: 2rem;
 }
 
 h1 {
-  color: #fff;
-  font-weight: 700;
+  color: var(--academic-blue);
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
 }
