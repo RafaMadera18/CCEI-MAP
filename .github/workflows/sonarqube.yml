@@ -1,0 +1,50 @@
+name: SonarQube Scan
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  sonar_scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout del Código
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: 'npm'
+          cache-dependency-path: src/ccei-map/WebApp/package-lock.json
+          
+      - name: Install Dependencies
+        run: npm ci
+        working-directory: src/ccei-map/WebApp
+
+      - name: Run Tests with Coverage
+        run: npm run test -- --no-watch --code-coverage --browsers=ChromeHeadless
+        working-directory: src/ccei-map/WebApp
+
+      - name: SonarQube Scan and Check Quality Gate
+        uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216 # v2.2.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          projectBaseDir: src/ccei-map/WebApp
+          args: >
+            -Dsonar.projectKey=CCEI-MAP
+            -Dsonar.sources=src
+            -Dsonar.tests=src
+            -Dsonar.test.inclusions=**/*.spec.ts,**/*.test.ts 
+            -Dsonar.typescript.lcov.reportPaths=coverage/**/lcov.info 
+            -Dsonar.qualitygate.wait=true
