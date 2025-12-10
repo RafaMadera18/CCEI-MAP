@@ -4,96 +4,75 @@
   </header>
 
   <div class="content-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Mapa Interactivo UADY</h1>
+        <p class="hero-subtitle">Encuentra tu camino en el campus de manera fácil y rápida</p>
+        <div class="hero-badges">
+          <span class="badge">🎓 Para Estudiantes</span>
+          <span class="badge">📍 Ubicaciones en Tiempo Real</span>
+          <span class="badge">🗺️ Navegación Intuitiva</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
     <section class="map-section">
-      <app-map-d3></app-map-d3>
-    </section>
-
-    <section class="info-section">
-      <div class="welcome-section">
-        <h1>Bienvenido al Mapa Interactivo del Campus UADY</h1>
-        <p class="intro-text">
-          Navega por nuestro campus de forma intuitiva y descubre todos los
-          espacios que conforman la Universidad Autónoma de Yucatán.
-        </p>
-        <h2>¿Cómo usar el mapa?</h2>
-        <app-feature-card
-          icon="🏢"
-          title="Explora Edificios"
-          description="Haz clic en cualquier edificio para ver información detallada."
-        ></app-feature-card>
-        <app-feature-card
-          icon="📍"
-          title="Encuentra Salones"
-          description="Selecciona un salón específico para conocer su ubicación exacta."
-        ></app-feature-card>
-        <app-feature-card
-          icon="🚻"
-          title="Servicios"
-          description="Los baños y servicios están identificados con colores especiales."
-        ></app-feature-card>
+      <div class="map-header">
+        <h2>Explora el Campus</h2>
+        <p>Haz clic en cualquier edificio o salón para ver más información</p>
+      </div>
+      <div class="map-container">
+        <app-map-d3></app-map-d3>
       </div>
     </section>
-    <div class="bottom-section">
-      <h1 class="bottom-title">Información del Campus</h1>
-      <div class="content-item">
-        <app-info-card
-          title="Edificios Disponibles"
-          description="El campus cuenta con múltiples edificios distribuidos estratégicamente para su uso y eficiencia."
-          gradient="blue"
-        />
-      </div>
-      <div class="content-item">
-        <app-info-card
-          title="Eventos del Campus"
-          description="Consulta la sección de eventos para conocer actividades académicas, culturales y deportivas que se realizan en diferentes espacios."
-          gradient="blue"
-        />
-      </div>
-      <div class="content-item">
-        <app-info-card
-          title="Bibliotecas"
-          description="Accede a amplias colecciones bibliográficas, espacios de estudio y recursos digitales en nuestras bibliotecas especializadas."
-          gradient="purple"
-        />
-      </div>
 
-      <div class="content-item">
-        <app-info-card
-          title="Laboratorios"
-          description="Instalaciones equipadas con tecnología de punta para prácticas de ingeniería, ciencias y computación."
-          gradient="purple"
-        />
+    <!-- Quick Guide Section -->
+    <section class="guide-section">
+      <h2 class="section-title">Guía Rápida</h2>
+      <div class="features-grid">
+        <app-feature-card icon="🏢" title="Explora Edificios"
+          description="Navega por todos los edificios del campus y descubre las instalaciones disponibles."></app-feature-card>
+        <app-feature-card icon="📍" title="Encuentra Espacios"
+          description="Localiza salones, laboratorios, oficinas y más con un solo clic."></app-feature-card>
+        <app-feature-card icon="🔍" title="Zoom Interactivo"
+          description="Acerca y aleja el mapa para ver detalles específicos de cada área."></app-feature-card>
       </div>
+    </section>
 
-      <div class="content-item">
-        <app-info-card
-          title="Cafeterías"
-          description="Encuentra espacios para alimentarte y descansar entre clases. Ubicaciones distribuidas en todo el campus."
-          gradient="purple"
-        />
+    <!-- Services Section -->
+    <section class="services-section">
+      <h2 class="section-title">Servicios del Campus</h2>
+      <div class="services-grid">
+        <app-info-card title="📚 Bibliotecas"
+          description="Espacios de estudio, recursos bibliográficos digitales y físicos disponibles para tu aprendizaje."
+          gradient="blue" />
+        <app-info-card title="🔬 Laboratorios"
+          description="Instalaciones equipadas con tecnología de última generación para tus prácticas académicas."
+          gradient="purple" />
+        <app-info-card title="☕ Cafeterías"
+          description="Puntos de alimentación distribuidos en todo el campus para tu comodidad." gradient="green" />
+        <app-info-card title="⚽ Áreas Deportivas"
+          description="Canchas, gimnasios y espacios recreativos para mantener tu bienestar físico."
+          gradient="orange" />
+        <app-info-card title="📋 Control Escolar"
+          description="Oficinas administrativas para trámites, inscripciones y documentación oficial."
+          gradient="pink" />
+        <app-info-card title="🎭 Eventos & Cultura"
+          description="Descubre actividades académicas, culturales y deportivas que enriquecen tu vida universitaria."
+          gradient="blue" />
       </div>
+    </section>
 
-      <div class="content-item">
-        <app-info-card
-          title="Áreas Deportivas"
-          description="Canchas, gimnasios y espacios recreativos para mantener un estilo de vida saludable durante tu estancia universitaria."
-          gradient="purple"
-        />
+    <!-- Help Section -->
+    <section class="help-section">
+      <div class="help-card">
+        <h3>¿Necesitas Ayuda?</h3>
+        <p>Si tienes dudas sobre cómo usar el mapa o encontraste alguna información incorrecta, no dudes en
+          contactarnos. Tu retroalimentación nos ayuda a mejorar continuamente.</p>
+        <button class="contact-btn">Contactar Soporte</button>
       </div>
-      <div class="content-item">
-        <app-info-card
-          title="Control Escolar"
-          description="Oficinas administrativas para trámites académicos, inscripciones, certificados y documentación oficial."
-          gradient="purple"
-        />
-      </div>
-      <div class="content-item">
-        <app-info-card
-          title="¿Necesitas Ayuda?"
-          description="Si tienes alguna pregunta o encontraste un error en el mapa, contáctanos. Tu retroalimentación nos ayuda a mejorar."
-          gradient="orange"
-        />
-      </div>
-    </div>
+    </section>
   </div>
 </div>

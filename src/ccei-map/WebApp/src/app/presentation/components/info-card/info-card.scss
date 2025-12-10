@@ -1,49 +1,76 @@
 .info-card {
-  padding: 1.5rem;
-  border-radius: 12px;
-  color: white;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  padding: 1.75rem;
+  border-radius: 16px;
+  border: 1.5px solid var(--glass-border);
+  color: var(--blue-grey-900);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Glassmorphism effect */
+  background: var(--glass-white);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+
+  /* Blue gradient accent bar */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, var(--primary-blue), var(--light-blue));
+    transition: width 0.3s ease;
+  }
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg), var(--shadow-blue);
+    border-color: rgba(37, 99, 235, 0.3);
+    background: rgba(255, 255, 255, 0.92);
+
+    &::before {
+      width: 8px;
+    }
   }
 
   h2 {
     font-size: 1.35rem;
-    font-weight: 600;
-    color: white;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    margin: 0 0 1rem 0;
-    padding-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--academic-blue);
+    border-bottom: 2px solid var(--blue-grey-200);
+    margin: 0 0 1.125rem 0;
+    padding-bottom: 0.625rem;
+    letter-spacing: -0.3px;
   }
 
   p {
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--blue-grey-600);
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 0.95rem;
   }
 
-  &.gradient-purple {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Blue gradient variations */
+  &.gradient-purple::before {
+    background: linear-gradient(180deg, #6366f1, #8b5cf6);
   }
 
-  &.gradient-blue {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  &.gradient-blue::before {
+    background: linear-gradient(180deg, var(--primary-blue), var(--sky-blue));
   }
 
-  &.gradient-green {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  &.gradient-green::before {
+    background: linear-gradient(180deg, #10b981, #34d399);
   }
 
-  &.gradient-orange {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  &.gradient-orange::before {
+    background: linear-gradient(180deg, #f59e0b, #fbbf24);
   }
 
-  &.gradient-pink {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  &.gradient-pink::before {
+    background: linear-gradient(180deg, #ec4899, #f472b6);
   }
 }
 

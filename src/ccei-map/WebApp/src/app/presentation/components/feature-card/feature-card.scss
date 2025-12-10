@@ -1,42 +1,72 @@
 .feature-item {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  border-left: 4px solid #007bff;
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s;
+  padding: 2rem;
+  /* Glassmorphism card with blue tint */
+  background: var(--glass-white);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 16px;
+  border: 1.5px solid var(--glass-border);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  /* Blue accent gradient on hover */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
   &:hover {
-    transform: translateX(4px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg), var(--shadow-blue);
+    border-color: rgba(37, 99, 235, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+
+    &::before {
+      opacity: 1;
+    }
   }
 
   h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem 0;
-    color: #333;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.875rem 0;
+    color: var(--academic-blue);
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    letter-spacing: -0.3px;
   }
 
   p {
     margin: 0;
-    color: #666;
-    line-height: 1.6;
+    color: var(--blue-grey-600);
+    line-height: 1.7;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 768px) {
   .feature-item {
-    padding: 0.75rem;
+    padding: 1.5rem;
 
     h3 {
-      font-size: 1rem;
+      font-size: 1.15rem;
     }
 
     p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
   }
 }

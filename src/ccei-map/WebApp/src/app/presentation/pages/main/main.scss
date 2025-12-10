@@ -1,77 +1,347 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-  overflow-y: scroll;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 header {
   flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .content-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  gap: 4rem;
+  padding-bottom: 4rem;
 }
 
+// Hero Section - Azul sólido amigable
+.hero-section {
+  width: 100%;
+  background: #3b82f6;
+  padding: 5rem 2rem;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: var(--shadow-lg), inset 0 0 80px rgba(37, 99, 235, 0.2);
+  position: relative;
+  overflow: hidden;
+
+  /* Animated subtle pattern overlay */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    color: #ffffff;
+    letter-spacing: -2px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.35rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    line-height: 1.7;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .badge {
+      /* Glassmorphism badges */
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px) saturate(180%);
+      -webkit-backdrop-filter: blur(12px) saturate(180%);
+      padding: 0.65rem 1.5rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 20px rgba(96, 165, 250, 0.3);
+      }
+    }
+  }
+}
+
+// Map Section - Glassmorphism design
 .map-section {
   width: 100%;
-  max-width: 1200px;
-  border-radius: 12px;
-  padding: 1rem 2rem;
-}
+  max-width: 1400px;
+  padding: 0 2rem;
 
-.info-section {
-  width: 100%;
-  background: #fff;
-  padding: 2rem;
-
-  h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #222;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin: 1.5rem 0 1rem;
-    color: #333;
-  }
-
-  p {
-    color: #555;
-    line-height: 1.6;
-  }
-}
-
-.bottom-section {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 2rem;
-
-  .bottom-title {
-    flex: 0 0 100%;
+  .map-header {
     text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #fff;
+    margin-bottom: 2.5rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--academic-blue);
+      margin-bottom: 0.75rem;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+    }
+
+    p {
+      color: var(--blue-grey-600);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
   }
 
-  .content-item {
-    flex: 1 1 300px;
-    width: 320px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
+  .map-container {
+    /* Glassmorphism card for map */
+    background: var(--glass-white);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg), var(--shadow-blue);
+    overflow: hidden;
+    border: 1.5px solid var(--glass-border);
+    min-height: 700px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 12px 40px rgba(15, 23, 42, 0.2), var(--shadow-blue);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Section Title - Blue accent
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--academic-blue);
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1rem;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  }
+}
+
+// Guide Section
+.guide-section {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+// Services Section
+.services-section {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 2rem;
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+}
+
+// Help Section - Blue glassmorphism card
+.help-section {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 2rem;
+
+  .help-card {
+    /* Glassmorphism with blue gradient overlay */
+    background: linear-gradient(135deg, 
+      rgba(30, 58, 95, 0.9) 0%, 
+      rgba(37, 99, 235, 0.85) 100%
+    );
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: var(--shadow-lg), var(--shadow-blue);
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+
+    /* Subtle pattern overlay */
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: #fff;
+      letter-spacing: -0.5px;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.95);
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-btn {
+      background: #ffffff;
+      color: var(--primary-blue);
+      border: none;
+      padding: 0.875rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 1;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), 0 0 30px rgba(255, 255, 255, 0.4);
+        background: #f0f9ff;
+      }
+
+      &:active {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+// Responsive Design - Maintain glassmorphism on mobile
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3.5rem 1.5rem;
+
+    .hero-title {
+      font-size: 2.25rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+    }
+
+    .hero-badges .badge {
+      font-size: 0.85rem;
+      padding: 0.55rem 1.25rem;
+    }
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .map-section .map-header h2 {
+    font-size: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .help-section .help-card {
+    padding: 2.25rem;
+
+    h3 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+    }
+
+    .contact-btn {
+      padding: 0.8rem 2rem;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 2.5rem 1rem;
+
+    .hero-title {
+      font-size: 1.85rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
   }
 }
