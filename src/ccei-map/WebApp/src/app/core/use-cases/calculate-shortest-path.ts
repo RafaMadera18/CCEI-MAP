@@ -1,10 +1,13 @@
+import { Injectable } from '@angular/core';
 import { Graph } from '../../data/model/Grafo';
 import { Connection } from '../../data/model/Connection';
 
 export interface CalculateShortestPathUseCase {
   execute(startNodeId: string, endNodeId: string, graph: Graph): Connection[];
 }
-
+@Injectable({
+  providedIn: 'root'
+})
 export class CalculateShortestPathUseCaseImpl implements CalculateShortestPathUseCase {
 
   execute(startNodeId: string, endNodeId: string, graph: Graph): Connection[] {
@@ -41,8 +44,9 @@ export class CalculateShortestPathUseCaseImpl implements CalculateShortestPathUs
       
       const currentNodeId = unvisitedNodes.shift()!;
       
-      if (distances.get(currentNodeId) === Infinity)
-        break;
+      /* esto rompía el calculo de la distancia*/
+      /*if (distances.get(currentNodeId) === Infinity)
+        break; */
 
       if (currentNodeId === endNodeId)
         break;
