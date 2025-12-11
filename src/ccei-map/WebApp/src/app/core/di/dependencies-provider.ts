@@ -19,6 +19,10 @@ import {
   GetSpacesByBuildingUseCase,
   GetSpacesByBuildingUseCaseImpl,
 } from '@use-cases/index';
+import {
+  CalculateShortestPathUseCase,
+  CalculateShortestPathUseCaseImpl,
+} from '@use-cases/calculate-shortest-path';
 
 // Repository Tokens
 export const BUILDING_REPOSITORY = new InjectionToken<BuildingRepository>(
@@ -60,6 +64,11 @@ export const CALCULATE_SPACE_BOUNDS_USE_CASE =
     'CalculateSpaceBoundsUseCase',
   );
 
+export const CALCULATE_SHORTEST_PATH_USE_CASE =
+  new InjectionToken<CalculateShortestPathUseCase>(
+    'CalculateShortestPathUseCase',
+  );
+
 // Providers Array
 export const CORE_PROVIDERS: Provider[] = [
   // Use Cases
@@ -94,5 +103,8 @@ export const CORE_PROVIDERS: Provider[] = [
   {
     provide: CALCULATE_SPACE_BOUNDS_USE_CASE,
     useClass: CalculateSpaceBoundsUseCaseImpl,
-  },
+  },{
+    provide: CALCULATE_SHORTEST_PATH_USE_CASE,
+    useClass: CalculateShortestPathUseCaseImpl,
+  }
 ];
