@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 import { BuldingsList } from './buldings-list';
 
@@ -8,12 +9,14 @@ describe('BuldingsList', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BuldingsList]
+      imports: [BuldingsList],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 
     fixture = TestBed.createComponent(BuldingsList);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('buildings', []);
     fixture.detectChanges();
   });
 

@@ -27,7 +27,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "styles": [
+              "src/styles.scss"
+            ]
           },
           "configurations": {
             "production": {
@@ -72,12 +74,19 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "eslintConfig": "eslint.config.js",
-            "lintFilePatterns": ["**/*.spec.ts", "**/*.ts"]
+            "lintFilePatterns": [
+              "**/*.spec.ts",
+              "**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -86,7 +95,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "styles": [
+              "src/styles.scss"
+            ]
           }
         }
       }

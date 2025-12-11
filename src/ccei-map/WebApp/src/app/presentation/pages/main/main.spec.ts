@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { GET_ALL_SPACES_USE_CASE } from '@di/dependencies-provider';
+import { provideRouter } from '@angular/router';
 
 import { Main } from './main';
 
@@ -8,7 +11,15 @@ describe('Main', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Main]
+      imports: [Main],
+      providers: [
+        provideZonelessChangeDetection(),
+        provideRouter([]),
+        {
+          provide: GET_ALL_SPACES_USE_CASE,
+          useValue: { execute: () => [] }
+        }
+      ]
     })
     .compileComponents();
 

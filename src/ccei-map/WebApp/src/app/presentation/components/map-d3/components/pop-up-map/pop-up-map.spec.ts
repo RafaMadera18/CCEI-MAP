@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 import { PopUpMap } from './pop-up-map';
 
@@ -8,7 +9,8 @@ describe('PopUpMap', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PopUpMap]
+      imports: [PopUpMap],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 
