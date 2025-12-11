@@ -34,13 +34,11 @@ export class CalculateShortestPathUseCaseImpl
     graph: Graph,
     startId: string,
   ): Map<string, number> {
-    const distances = new Map<string, number>();
-    for (const node of graph.getAllNodes()) {
-      distances.set(node.id, Infinity);
-    }
-
-    distances.set(startId, 0);
-    return distances;
+    return new Map(
+      graph
+        .getAllNodes()
+        .map((node) => [node.id, node.id === startId ? 0 : Infinity]),
+    );
   }
 
   private runDijkstra(
