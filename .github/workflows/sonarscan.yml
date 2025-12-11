@@ -49,8 +49,6 @@ jobs:
             -Dsonar.tests=src
             -Dsonar.test.inclusions=**/*.spec.ts,**/*.test.ts
             -Dsonar.typescript.lcov.reportPaths=coverage/**/lcov.info
-            # NO incluimos -Dsonar.branch.name=clean. El SonarScanner lo detecta automáticamente.
-            # NO incluimos argumentos de pull request.
 
       - name: SonarQube Scan on Pull Request (PR Analysis)
         if: github.event_name == 'pull_request'
