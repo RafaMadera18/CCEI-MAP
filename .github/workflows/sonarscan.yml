@@ -44,6 +44,8 @@ jobs:
           args: >
             -Dsonar.organization=rafamadera18
             -Dsonar.projectKey=CCEI-MAP
+            -Dsonar.branch.name=clean
+            -Dsonar.pullrequest.base=clean
             -Dsonar.sources=src
             -Dsonar.tests=src
             -Dsonar.test.inclusions=**/*.spec.ts,**/*.test.ts 
