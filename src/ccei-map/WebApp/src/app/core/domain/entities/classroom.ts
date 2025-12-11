@@ -11,17 +11,12 @@ export class Classroom extends Space {
     dimensions: Dimensions,
     isActive: boolean,
     public readonly nameClassroom: string,
-    imgUrl?: string
+    imgUrl?: string,
   ) {
     super(spaceId, name, floor, coordinates, dimensions, isActive, imgUrl);
   }
 
   getSpaceType(): SpaceType {
     return SpaceType.CLASSROOM;
-  }
-
-  getCapacityEstimate(): number {
-    const area = this.calculateArea();
-    return Math.floor(area / 2); // 2 m² por estudiante aproximadamente
   }
 }

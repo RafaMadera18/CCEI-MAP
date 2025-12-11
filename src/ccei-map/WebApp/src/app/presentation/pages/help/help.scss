@@ -10,7 +10,11 @@
 }
 
 .help-hero {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--medium-blue) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--medium-blue) 100%
+  );
   padding: 4rem 2rem;
   text-align: center;
   color: #ffffff;
@@ -26,7 +30,6 @@
 
   .hero-subtitle {
     font-size: 1.25rem;
-    margin: 0;
     opacity: 0.95;
     max-width: 700px;
     margin: 0 auto;
@@ -40,7 +43,11 @@
   padding: 3rem 2rem;
 
   &.alt-bg {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, rgba(59, 130, 246, 0.05) 100%);
+    background: linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.03) 0%,
+      rgba(59, 130, 246, 0.05) 100%
+    );
   }
 
   .section-icon {
@@ -125,14 +132,20 @@
 
   &:hover {
     transform: translateX(8px);
-    box-shadow: var(--shadow-md), 0 0 20px rgba(37, 99, 235, 0.15);
+    box-shadow:
+      var(--shadow-md),
+      0 0 20px rgba(37, 99, 235, 0.15);
   }
 
   .feature-number {
     flex-shrink: 0;
     width: 3rem;
     height: 3rem;
-    background: linear-gradient(135deg, var(--primary-blue), var(--medium-blue));
+    background: linear-gradient(
+      135deg,
+      var(--primary-blue),
+      var(--medium-blue)
+    );
     color: #ffffff;
     border-radius: 12px;
     display: flex;
@@ -219,7 +232,9 @@
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md), 0 0 16px rgba(37, 99, 235, 0.15);
+    box-shadow:
+      var(--shadow-md),
+      0 0 16px rgba(37, 99, 235, 0.15);
   }
 
   .tip-icon {
@@ -247,8 +262,9 @@
 }
 
 .contact-card {
-  background: linear-gradient(135deg, 
-    rgba(30, 58, 95, 0.9) 0%, 
+  background: linear-gradient(
+    135deg,
+    rgba(30, 58, 95, 0.9) 0%,
     rgba(37, 99, 235, 0.85) 100%
   );
   backdrop-filter: blur(16px) saturate(180%);
@@ -359,7 +375,9 @@
 
     &:hover {
       transform: translateY(-4px);
-      box-shadow: var(--shadow-md), 0 0 16px rgba(37, 99, 235, 0.15);
+      box-shadow:
+        var(--shadow-md),
+        0 0 16px rgba(37, 99, 235, 0.15);
     }
 
     h4 {

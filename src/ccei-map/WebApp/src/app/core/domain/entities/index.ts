@@ -4,4 +4,3 @@ export * from "./laboratory";
 export * from "./office";
 export * from "./professor";
 export * from "./space";
-export * from "./user";
