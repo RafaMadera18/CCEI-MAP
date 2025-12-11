@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Space } from '@domain/entities';
 
 @Component({
   selector: 'app-pop-up-map',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './pop-up-map.html',
   styleUrl: './pop-up-map.scss',
 })

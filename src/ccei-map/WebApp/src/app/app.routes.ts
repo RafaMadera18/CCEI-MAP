@@ -9,14 +9,17 @@ export const routes: Routes = [
   {
     path: 'buldings',
     loadComponent: () =>
-      import('./presentation/pages/buildings/buldings').then(
-        (m) => m.Buldings,
-      ),
+      import('./presentation/pages/buildings/buldings').then((m) => m.Buldings),
   },
   {
     path: 'help',
     loadComponent: () =>
       import('./presentation/pages/help/help').then((m) => m.HelpPage),
+  },
+  {
+    path: 'space/:id',
+    loadComponent: () =>
+      import('./presentation/pages/space/space').then((m) => m.SpacePage),
   },
   {
     path: '**',

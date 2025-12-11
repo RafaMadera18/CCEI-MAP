@@ -30,7 +30,12 @@
         </div>
 
         <div class="popup-footer">
-          <button class="control-btn">Ir a espacio</button>
+          <a
+            [routerLink]="['/space', selectedSpaces[0].spaceId]"
+            class="control-btn"
+          >
+            Ir a espacio
+          </a>
         </div>
       } @else if (selectedSpaces.length === 2) {
         <div class="popup-content-two">
