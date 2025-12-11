@@ -1,14 +1,14 @@
-import { Building } from '@domain/entities';
-import { BuildingNode } from './BuildingNode';
-import { Connection } from './Connection';
-import { Node } from './Node';
-import { Street } from '@domain/entities/street';
+import { Building } from "@domain/entities";
+import { BuildingNode } from "./BuildingNode";
+import { Connection } from "./Connection";
+import { Node } from "./Node";
+import { Street } from "@domain/entities/street";
 
 export class Graph {
-  private nodes: Map<string, Node> = new Map();
-  private connections: Connection[] = [];
-  private adjacencies: Map<string, Connection[]> = new Map();
-  private streets: Map<string, Street> = new Map();
+  private readonly nodes = new Map<string, Node>();
+  private readonly connections: Connection[] = [];
+  private readonly adjacencies = new Map<string, Connection[]>();
+  private readonly streets = new Map<string, Street>();
 
   addNode(node: Node): void {
     this.nodes.set(node.id, node);
@@ -41,7 +41,7 @@ export class Graph {
 
   getAllBuildings(): Building[] {
     return Array.from(this.nodes.values())
-      .filter((node): node is BuildingNode => node.type === 'building')
+      .filter((node): node is BuildingNode => node.type === "building")
       .map((node) => node.building);
   }
 
