@@ -11,7 +11,7 @@ on:
 jobs:
   sonar_scan:
     runs-on: ubuntu-latest
-
+    environment: sonarqube
     steps:
       # Checkout del Código
       - name: Checkout Code
