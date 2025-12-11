@@ -1,18 +1,20 @@
-import { Space } from "@domain/entities";
-import { GetAllSpacesUseCase } from "@use-cases/get-all-spaces";
-import { GetSpacesByBuildingUseCase } from "@use-cases/get-spaces-by-building";
+import { Injectable, inject } from '@angular/core';
+import {
+  GET_ALL_SPACES_USE_CASE,
+  GET_SPACE_BY_ID_USE_CASE,
+} from '@di/dependencies-provider';
+import { Space } from '@domain/entities';
 
+@Injectable({ providedIn: 'root' })
 export class SpacesController {
-  constructor(
-    private readonly getSpacesByBuildingUseCase: GetSpacesByBuildingUseCase,
-    private readonly getAllSpacesUseCase: GetAllSpacesUseCase
-  ) {}
-
-  getSpacesByBuilding(buildingId: string): Space[] {
-    return this.getSpacesByBuildingUseCase.execute(buildingId);
-  }
+  private readonly getAllSpacesUseCase = inject(GET_ALL_SPACES_USE_CASE);
+  private readonly getSpaceByIdUseCase = inject(GET_SPACE_BY_ID_USE_CASE);
 
   getAllSpaces(): Space[] {
     return this.getAllSpacesUseCase.execute();
+  }
+
+  getSpaceById(spaceId: string): Space {
+    return this.getSpaceByIdUseCase.execute(spaceId);
   }
 }

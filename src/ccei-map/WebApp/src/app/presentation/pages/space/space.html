@@ -1,0 +1,84 @@
+<div class="space-container">
+  <app-header></app-header>
+  <div class="content">
+    @if (space) {
+      <div class="space-details">
+        <div class="space-header">
+          <h1>{{ space.name }}</h1>
+          <span
+            class="space-status"
+            [class.active]="space.isActive"
+            [class.inactive]="!space.isActive"
+          >
+            {{ space.isActive ? "Activo" : "Inactivo" }}
+          </span>
+        </div>
+
+        @if (space.imgUrl) {
+          <div class="space-image">
+            <img [src]="space.imgUrl" [alt]="space.name" />
+          </div>
+        }
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <div class="info-content">
+              <h3>Ubicación</h3>
+              <p>Piso {{ space.floor }}</p>
+              <p class="coordinates">
+                Coordenadas: ({{ space.coordinates.latitude }},
+                {{ space.coordinates.longitude }})
+              </p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">📐</div>
+            <div class="info-content">
+              <h3>Dimensiones</h3>
+              <p>
+                {{ space.dimensions.width }}m × {{ space.dimensions.height }}m
+              </p>
+              <p class="area">Área: {{ space.calculateArea() }}m²</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">🏷️</div>
+            <div class="info-content">
+              <h3>Tipo de Espacio</h3>
+              <p>{{ getSpaceTypeLabel(space.getSpaceType()) }}</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">ℹ️</div>
+            <div class="info-content">
+              <h3>Identificador</h3>
+              <p class="space-id">{{ space.spaceId }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="availability-section">
+          <h2>Disponibilidad</h2>
+          <div class="availability-status">
+            <span
+              class="status-badge"
+              [class.available]="space.isAvailable()"
+              [class.unavailable]="!space.isAvailable()"
+            >
+              {{ space.isAvailable() ? "✓ Disponible" : "✗ No Disponible" }}
+            </span>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Cargando información del espacio...</p>
+      </div>
+    }
+  </div>
+</div>

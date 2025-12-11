@@ -7,4 +7,11 @@ export class SpaceMockRepository implements SpaceRepository {
   getAllSpaces(): Space[] {
     return extractAllSpaces(GrafoMock().getAllBuildings());
   }
+  getById(spaceId: string): Space {
+    const space = this.getAllSpaces().find((space) => space.spaceId == spaceId);
+    if (!space) {
+      throw new Error('Not found space by id');
+    }
+    return space;
+  }
 }
