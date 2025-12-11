@@ -42,6 +42,7 @@ jobs:
         with:
           projectBaseDir: src/ccei-map/WebApp
           args: >
+            -Dsonar.organization=rafamadera18
             -Dsonar.projectKey=CCEI-MAP
             -Dsonar.sources=src
             -Dsonar.tests=src
