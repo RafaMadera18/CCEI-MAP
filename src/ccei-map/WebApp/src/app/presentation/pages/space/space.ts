@@ -32,5 +32,6 @@ export class SpacePage implements OnInit {
       [SpaceType.OFFICE]: 'Oficina',
     };
     return labels[type] || type;
+    
   }
 }
