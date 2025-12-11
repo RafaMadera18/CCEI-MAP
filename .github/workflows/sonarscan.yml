@@ -34,6 +34,11 @@ jobs:
         run: npm run test -- --no-watch --code-coverage --browsers=ChromeHeadless
         working-directory: src/ccei-map/WebApp
 
+      - name: List Coverage Directory (Debug)
+        run: ls -R coverage
+        working-directory: src/ccei-map/WebApp
+        continue-on-error: true
+
       - name: SonarQube Scan on Push (Branch Analysis)
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
