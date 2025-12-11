@@ -34,8 +34,9 @@ jobs:
         run: npm run test -- --no-watch --code-coverage --browsers=ChromeHeadless
         working-directory: src/ccei-map/WebApp
 
-      - name: SonarQube Scan and Check Quality Gate
-        uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216 # v2.2.0
+      - name: SonarQube Scan on Push (Branch Analysis)
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
@@ -44,10 +45,27 @@ jobs:
           args: >
             -Dsonar.organization=rafamadera18
             -Dsonar.projectKey=CCEI-MAP
-            -Dsonar.branch.name=clean
-            -Dsonar.pullrequest.base=clean
             -Dsonar.sources=src
             -Dsonar.tests=src
-            -Dsonar.test.inclusions=**/*.spec.ts,**/*.test.ts 
-            -Dsonar.typescript.lcov.reportPaths=coverage/**/lcov.info 
+            -Dsonar.test.inclusions=**/*.spec.ts,**/*.test.ts
+            -Dsonar.typescript.lcov.reportPaths=coverage/**/lcov.info
+            # NO incluimos -Dsonar.branch.name=clean. El SonarScanner lo detecta automáticamente.
+            # NO incluimos argumentos de pull request.
+
+      - name: SonarQube Scan on Pull Request (PR Analysis)
+        if: github.event_name == 'pull_request'
+        uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          projectBaseDir: src/ccei-map/WebApp
+          args: >
+            -Dsonar.organization=rafamadera18
+            -Dsonar.projectKey=CCEI-MAP
+            -Dsonar.pullrequest.base=clean 
+            -Dsonar.sources=src
+            -Dsonar.tests=src
+            -Dsonar.test.inclusions=**/*.spec.ts,**/*.test.ts
+            -Dsonar.typescript.lcov.reportPaths=coverage/**/lcov.info
             -Dsonar.qualitygate.wait=true
